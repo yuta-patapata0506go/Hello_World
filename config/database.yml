@@ -28,3 +28,9 @@ production:
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") {5} %>
   database: <%= ENV['DATABASE_URL'] %>
+
+cable:
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  url: <%= ENV["SOLID_CABLE_DATABASE_URL"] || ENV["DATABASE_URL"] %>
